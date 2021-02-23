@@ -13,7 +13,24 @@ Sample Output 1:
 */
 
 // Solution:
-
+int height(TreeNode<int>* root) {
+    /* Don't write main().
+     * Don't read input, it is passed as function argument.
+     * Return output and don't print it.
+     * Taking input and printing output is handled automatically.
+     */
+    if(root == NULL){
+        return 0;
+    }
+    int ans = 0;
+    for(int i = 0; i < root -> children.size(); i++){
+        int childHeight = height(root -> children[i]);
+        if(childHeight > ans){
+            ans = childHeight;
+        }
+    }
+    return ans + 1;
+}
 
 // Main Code:
 /*
