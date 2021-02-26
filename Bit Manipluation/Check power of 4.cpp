@@ -22,18 +22,7 @@ bool isPowerOf4(int n){
      * Return output and don't print it.
      * Taking input and printing output is handled automatically.
      */
-    if(n == 0){
-        return false;
-	}
-    if((n & (n - 1)) != 0){
-        return false;
-	}
-    else if((n & 0xAAAAAAAA) != 0){
-        return false;
-	}
-    else{
-        return true;
-	}
+    return n != 0 && ((n & (n - 1)) == 0) && !(n & 0xAAAAAAAA);
 }
 
 // Main Code:
